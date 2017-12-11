@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0sp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorViewBackground">
+
+    <Button
+        android:id="@+id/play_git"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:onClick="gitButton"
+        android:background="@drawable/press_git"
+        android:layout_marginEnd="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/play_twit"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="@drawable/press_twitter"
+        android:onClick="twitButton"
+        android:layout_alignTop="@+id/play_face"
+        android:layout_alignStart="@+id/play_ins" />
+
+    <Button
+        android:id="@+id/play_face"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginTop="95dp"
+        android:background="@drawable/press_face"
+        android:onClick="faceButton"
+        android:layout_below="@+id/play_git"
+        android:layout_toEndOf="@+id/play_ins" />
+
+    <Button
+        android:id="@+id/play_snap"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="@drawable/press_snap"
+        android:onClick="snapButton"
+        android:layout_alignEnd="@+id/play_face"
+        android:layout_marginEnd="13dp"
+        android:layout_alignBottom="@+id/play_link" />
+
+    <Button
+        android:id="@+id/play_link"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="@drawable/press_link"
+        android:onClick="linkButton"
+        android:layout_marginBottom="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/play_twit" />
+
+    <Button
+        android:id="@+id/play_ins"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="32dp"
+        android:layout_toStartOf="@+id/play_git"
+        android:background="@drawable/press_instagram"
+        android:onClick="insButton" />
+
+</RelativeLayout>
