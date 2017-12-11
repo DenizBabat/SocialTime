@@ -10,13 +10,13 @@ import android.webkit.WebViewClient;
  * Created by deniz on 12.10.2017.
  */
 public class Twitter extends AppCompatActivity {
-
+    WebView wv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twiter);
 
-        WebView wv = (WebView) findViewById(R.id.web_twiter);
+        wv = (WebView) findViewById(R.id.web_twiter);
 
         WebSettings webSettings = wv.getSettings();
         wv.getSettings().setJavaScriptEnabled(true);
@@ -24,5 +24,13 @@ public class Twitter extends AppCompatActivity {
         wv.loadUrl("https://twitter.com/login");
         wv.setWebViewClient(new WebViewClient());
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (wv.canGoBack()) {
+            wv.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

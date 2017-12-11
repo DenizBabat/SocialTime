@@ -12,12 +12,14 @@ import android.webkit.WebViewClient;
 
 public class Instagram extends AppCompatActivity {
 
+    WebView wv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inst);
 
-        WebView wv = (WebView) findViewById(R.id.web_ins);
+        wv = (WebView) findViewById(R.id.web_ins);
 
         WebSettings webSettings = wv.getSettings();
         wv.getSettings().setJavaScriptEnabled(true);
@@ -26,6 +28,13 @@ public class Instagram extends AppCompatActivity {
         wv.setWebViewClient(new WebViewClient());
 
 
-
+    }
+    @Override
+    public void onBackPressed() {
+        if (wv.canGoBack()) {
+            wv.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

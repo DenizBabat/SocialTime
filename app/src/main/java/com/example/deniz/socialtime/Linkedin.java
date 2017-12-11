@@ -11,13 +11,13 @@ import android.webkit.WebViewClient;
  */
 
 public class Linkedin extends AppCompatActivity {
-
+    WebView wv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link);
 
-        WebView wv = (WebView) findViewById(R.id.web_link);
+        wv = (WebView) findViewById(R.id.web_link);
 
         WebSettings webSettings = wv.getSettings();
         wv.getSettings().setJavaScriptEnabled(true);
@@ -25,5 +25,13 @@ public class Linkedin extends AppCompatActivity {
         wv.loadUrl("https://www.linkedin.com/");
         wv.setWebViewClient(new WebViewClient());
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (wv.canGoBack()) {
+            wv.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

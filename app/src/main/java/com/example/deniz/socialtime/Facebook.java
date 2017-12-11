@@ -11,13 +11,13 @@ import android.webkit.WebViewClient;
  */
 
 public class Facebook extends AppCompatActivity {
-
+    WebView wv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_face);
 
-        WebView wv = (WebView) findViewById(R.id.web_face);
+        wv = (WebView) findViewById(R.id.web_face);
 
         WebSettings webSettings = wv.getSettings();
         wv.getSettings().setJavaScriptEnabled(true);
@@ -25,5 +25,13 @@ public class Facebook extends AppCompatActivity {
         wv.loadUrl("https://www.facebook.com/");
         wv.setWebViewClient(new WebViewClient());
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (wv.canGoBack()) {
+            wv.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
